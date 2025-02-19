@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- Temporary logo from svg-repo.com -->
+        <img src="./assets/logo.svg" alt="logo" />
+        <button id="clearBtn">Clear all</button>
+      </nav>
+    </header>
+    <main>
+      <h1>My Tasks</h1>
+      <div class="pages">
+        <span id="ongoing" class="active">Ongoing</span>
+        <span id="completed">Completed</span>
+      </div>
+      <section id="taskDisplay">
+        <p>Loading Tasks...</p>
+      </section>
+    </main>
+    <footer></footer>
+    <div class="circle"></div>
+    <button id="addBtn"><img src="./assets/add.svg" alt="Add icon" /></button>
+
+    <!-- hidden Elements -->
+    <div id="background" class="hidden">
+      <div class="addPopUp">
+        <p>Add new task here</p>
+        <form id="addForm">
+          <label for="add"
+            >Task:*<input
+              id="task"
+              type="text"
+              placeholder="Your task"
+              name="task"
+              required
+              autofocus
+          /></label>
+          <label for="description"
+            >Description:
+            <textarea rows="4" name="description" id="description"></textarea>
+          </label>
+          <label for="dateTime"
+            >Date-Time:*<input
+              id="dateTime"
+              type="datetime-local"
+              name="dateTime"
+              required
+          /></label>
+          <div>
+            <button type="submit" id="confirmAdd">Add</button>
+            <button type="button" id="cancelAdd">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="clearBg" class="hidden">
+      <div class="clearPopUp">
+        <p>Are you sure you want to clear all tasks?</p>
+        <div>
+          <button id="confirmClear">Yes</button>
+          <button id="cancelClear">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div id="editBg" class="hidden">
+      <div class="editPopUp">
+        <p>Edit task</p>
+        <input type="text" id="editTask" />
+        <textarea id="editDescription" rows="4"></textarea>
+        <input type="datetime-local" id="editDateTime" autofocus />
+        <div id="editActions">
+          <button id="cancelEdit">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div id="delBg" class="hidden">
+      <div class="delPopUp">
+        <p>Are you sure you want to delete this task?</p>
+
+        <div id="deleteActions">
+          <button id="cancelDel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

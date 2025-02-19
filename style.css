@@ -1,0 +1,302 @@
+:root {
+  --blue: #0070bb;
+  --black: #332f37;
+  --navy: #00356b;
+  --powder: #f0f4ef;
+  --alice: #e8f1f2;
+  --grayish: #98b6cc79;
+  --accent: #f66980;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+button {
+  cursor: pointer;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: var(--black);
+}
+header {
+  max-width: 800px;
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 4px var(--grayish);
+  padding: 14px 16px;
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+nav > img {
+  width: 50px;
+  height: 50px;
+}
+nav > button {
+  font-size: 0;
+  border-radius: 5px;
+  padding: 12px 18px;
+  color: #fff;
+  background-color: var(--accent);
+  line-height: 0;
+  font-size: 18px;
+  line-height: 100%;
+  border: none;
+  font-weight: 500;
+}
+nav > p {
+  display: none;
+}
+main {
+  max-width: 600px;
+  max-height: calc(100dvh - 98px);
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 98px 0 300px;
+  padding: 0 16px;
+  max-height: 565px;
+  gap: 16px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  box-shadow: 0 -4px 4px var(--grayish);
+  max-width: 800px;
+  width: 98%;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  background-color: white;
+}
+#addBtn {
+  background-color: transparent;
+  border: none;
+  position: fixed;
+  bottom: 10px;
+}
+#addBtn > img {
+  width: 90px;
+  height: 90px;
+}
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  position: fixed;
+  bottom: 14px;
+  background-color: white;
+  box-shadow: inset 0 -4px 4px var(--grayish);
+}
+h1 {
+  font-family: "Cabin", "Montserrat", sans-serif;
+  text-align: center;
+  color: var(--navy);
+  line-height: 100%;
+}
+.pages {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+#background,
+#clearBg,
+#delBg,
+#editBg {
+  height: 100dvh;
+  width: 100dvw;
+  position: fixed;
+  top: 0;
+  background-color: #00000074;
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hidden {
+  display: none !important;
+}
+.addPopUp,
+.clearPopUp {
+  max-width: 450px;
+  width: 90%;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--grayish);
+  padding-block: 20px;
+  gap: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.editPopUp,
+.delPopUp {
+  max-width: 450px;
+  width: 90%;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--grayish);
+  padding: 20px 16px;
+  gap: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.addPopUp > p,
+.editPopUp > p {
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 18px;
+}
+.addPopUp > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 24px;
+}
+#addForm input,
+#addForm textarea,
+.editPopUp > input,
+.editPopUp > textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 1px solid rgb(150, 150, 150);
+}
+input:focus,
+textarea:focus {
+  box-shadow: 4px 4px 4px var(--grayish), -4px -4px 4px var(--grayish);
+  border-color: transparent;
+  outline: none;
+}
+#addForm > label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: start;
+}
+label:has(input:user-invalid) {
+  color: red;
+}
+.clearPopUp > div,
+.addPopUp > form > div,
+#editActions,
+#deleteActions {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+.clearPopUp > div {
+  padding: 0 20px;
+}
+.clearPopUp > div > button,
+.addPopUp > form > div > button,
+#confirmEdit,
+#cancelEdit,
+#confirmDel,
+#cancelDel {
+  flex-basis: 50%;
+  padding-block: 8px;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+#confirmClear,
+#confirmDel {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border: 2px solid var(--accent);
+}
+#cancelClear,
+#cancelDel {
+  border: 2px solid var(--navy);
+  color: var(--navy);
+  background-color: white;
+}
+#confirmAdd,
+#confirmEdit {
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border: 2px solid var(--blue);
+}
+#cancelAdd,
+#cancelEdit {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background-color: white;
+}
+#taskDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 20px;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--alice); */
+  border: 2px solid var(--grayish);
+  border-radius: 8px;
+  width: 95%;
+  gap: 10px;
+  padding: 16px;
+}
+#ongoing,
+#completed {
+  color: var(--black);
+  font-size: 16px;
+  cursor: pointer;
+}
+.active {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.wrapper > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.wrapper > div > p {
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Cabin", "Montserrat", sans-serif;
+}
+.wrapper > p {
+  font-size: 14px;
+}
+.wrapper img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
