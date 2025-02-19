@@ -17,6 +17,10 @@ A simple web application to help users manage their tasks with ease. This app al
 - **JavaScript**: For dynamic functionality (adding, editing, deleting tasks)
 - **LocalStorage**: For saving tasks on the browser (persistent across page reloads)
 
-  ```
+## How to run the project
 
-  ```
+Visit "https://phareedahadamu-todoapp-test.netlify.app/" to use this web app.
+
+```
+
+```
